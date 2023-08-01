@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require('mongoose')
 
 
 const DietSchema = mongoose.Schema({
@@ -33,6 +33,6 @@ const DietSchema = mongoose.Schema({
     }
 });
 
-const Diet = mongoose.model('Diet', DietSchema);
-module.exports = Diet;
+const Diet = mongoose.model('Diet', DietSchema)
+module.exports = Diet
 
