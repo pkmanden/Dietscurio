@@ -8,7 +8,11 @@ import { RegisterComponent } from './register/register.component';
 import { Data1Component } from './data1/data1.component';
 import { Data2Component } from './data2/data2.component';
 import { HomeComponent } from './home/home.component';
-import { OverviewComponent } from './overview/overview.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { ProfileComponent } from './profile/profile.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -18,11 +22,15 @@ import { OverviewComponent } from './overview/overview.component';
     Data1Component,
     Data2Component,
     HomeComponent,
-    OverviewComponent
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    CommonModule,
+    NgbModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

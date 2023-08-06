@@ -33,6 +33,6 @@ const DietSchema = mongoose.Schema({
     }
 });
 
-const Diet = mongoose.model('Diet', DietSchema)
-module.exports = Diet
+module.exports =  mongoose.model('Diet', DietSchema)
+
 

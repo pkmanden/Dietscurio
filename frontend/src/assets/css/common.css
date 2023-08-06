@@ -1,0 +1,48 @@
+.panel-heading {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.outer {
+    height: 100vh;
+}
+
+#forgot {
+    min-width: 100px;
+    margin-left: auto;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.btn {
+    margin-top: 20px;
+    border-radius: 15px;
+}
+
+.panel {
+    min-height: 380px;
+    border-radius: 12px;
+    margin-top: 100px;
+}
+
+.input-field {
+    border-radius: 5px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border: 1px solid #ddd;
+}
+
+input[type='text'],
+input[type='password'],
+select {
+    border: none;
+    outline: none;
+    box-shadow: none;
+    width: 100%;
+}

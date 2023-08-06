@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { AuthenticationService } from './auth.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'frontend';
+  title = 'Dietscurio';
+
+  constructor(public auth: AuthenticationService, private modalService: NgbModal) {}
+
+  public open(modal: any) {
+    this.modalService.open(modal);
+  }
 }

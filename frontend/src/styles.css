@@ -1,1 +1,42 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import url('https://fonts.googleapis.com/css?family=Fjalla+One');
+@import url('https://fonts.googleapis.com/css?family=Oxygen+Mono');
+
+@import url(assets/css/common.css);
+
+input[type=text] {
+    margin: 8px 0;
+    box-sizing: border-box;
+    border-width: 1px;
+    border-color: #ff6a00;
+    font-family: 'Oxygen Mono', serif;
+    letter-spacing: 1px;
+}
+
+input[type=password] {
+    margin: 8px 0;
+    box-sizing: border-box;
+    border-width: 1px;
+    border-color: #ff6a00;
+    font-family: 'Oxygen Mono', serif;
+    letter-spacing: 2px;
+}
+
+select {
+    padding: 20px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border-width: 1px;
+    border-color: #ff6a00;
+    font-family: 'Oxygen Mono', serif;
+    letter-spacing: 1px;
+}
+
+h1 {
+    font-family: 'Fjalla One', serif;
+    font-size: 40px;
+    text-align: center;
+    margin-top: 2%;
+}
+
