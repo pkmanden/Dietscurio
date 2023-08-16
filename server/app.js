@@ -3,13 +3,14 @@ const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
 const cors = require('cors')
 const path = require('path')
+
+require('dotenv').config(); 
 const route = require('./routes/route')
 var cookieParser = require('cookie-parser')
 
 var app = express()
 const PORT = 3000
 
-require('dotenv').config(); 
 
 mongoose.connect('mongodb://localhost:27017/dietscurio')
 
@@ -25,9 +26,7 @@ mongoose.connection.on('error', (err)=> {
 })
 
 
-app.use(cors({
-    origin: "http://localhost:4200"
-  }))
+app.use(cors())
 
 app.use(bodyParser.json())
 app.use(cookieParser())

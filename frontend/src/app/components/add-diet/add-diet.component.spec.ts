@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Data2Component } from './data2.component';
+import { AddDietComponent } from './add-diet.component';
 
-describe('Data2Component', () => {
-  let component: Data2Component;
-  let fixture: ComponentFixture<Data2Component>;
+describe('AddDietComponent', () => {
+  let component: AddDietComponent;
+  let fixture: ComponentFixture<AddDietComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ Data2Component ]
+      declarations: [ AddDietComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(Data2Component);
+    fixture = TestBed.createComponent(AddDietComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

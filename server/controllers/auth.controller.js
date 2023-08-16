@@ -1,4 +1,3 @@
-const passport = require('passport');
 const mongoose = require('mongoose');
 const User = mongoose.model('User');
 const bcrypt = require('bcryptjs');
@@ -41,22 +40,31 @@ module.exports.login = async (req, res, next) => {
             return next(createError(400, "Incorrect Password!"));
             // return res.status(400).send("Incorrect Password!");
         }
-        console.log("process.env.JWT_SECRET : " + process.env.JWT_SECRET)
         const token = jwt.sign(
-            {id: user._id},
+            {
+                id: user._id,
+                name: user.first_name
+            },
             process.env.JWT_SECRET
+            // { expiresIn: 60 }
         )
         res.cookie("access_token", token, {httpOnly: true})
         .status(200)
         .json({
             status: 200,
             message: "Login Successful!",
-            data: user
+            data: user,
+            token: token
         });
-        // return next(createSuccess(200, "Login Successful!"));
         // return res.status(200).send("Login Successful!");
     } catch (error) {
         return next(createError(500, "Something went wrong!"));
         // return res.status(500).send("Something went wrong!");
     }
+}
+
+module.exports.logout = (req, res) => {
+    return res.clearCookie("access_token")
+    .status(200)
+    .json({message: "Logged out successfully!"});
 }

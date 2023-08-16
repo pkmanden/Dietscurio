@@ -1,13 +1,5 @@
-<h1>Dietscurio</h1>
 
-<ul class="nav navbar-nav navbar-right">
-    <li ><a routerLink="/">Home</a></li>
-    <li *ngIf="!auth.isLoggedIn()"><a routerLink="/login">Login</a></li>
-    <li *ngIf="!auth.isLoggedIn()"><a routerLink="/register">Register</a></li>
-    <li *ngIf="auth.isLoggedIn()"><a routerLink="/profile">{{ auth.getUserDetails().first_name }}</a></li>
-    <li *ngIf="auth.isLoggedIn()"><a (click)="auth.logout()">Logout</a></li>
-</ul>
-<!-- <app-home></app-home> -->
+<app-header></app-header>
 <div class="container">
     <router-outlet></router-outlet>
 </div>

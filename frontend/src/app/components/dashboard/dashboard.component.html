@@ -1,0 +1,49 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-6 col-md-6">
+      <label class="col-sm-3 control-label">Full name</label>
+      <p class="form-control-static">{{ userDetails?.first_name }} {{ userDetails?.last_name }}</p>
+    </div>
+    <div class="col-lg-6 col-md-6">
+      <label class="col-sm-3 control-label">Email</label>
+      <p class="form-control-static">{{ userDetails?.email }}</p>
+    </div>
+    <div class="form-group col-lg-6 col-md-6">
+      <label class="col-sm-3 control-label">Username</label>
+      <p class="form-control-static">{{ userDetails?.username }}</p>
+    </div>
+    <div class="form-group col-lg-6 col-md-6">
+      <label class="col-sm-3 control-label">Gender</label>
+      <p class="form-control-static">{{ userDetails?.gender }}</p>
+    </div>
+  </div>
+</div> 
+
+
+  <button routerLink="/add-diet" class="btn btn-primary mr-auto">Add Diet</button>
+
+  <br/>
+  <br/>
+
+  <table class="table" *ngIf="dietDetails">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Date</th>
+        <th scope="col">Weight</th>
+        <th scope="col">Breakfast</th>
+        <th scope="col">Lunch</th>
+        <th scope="col">Dinner</th>
+        <th scope="col">Snacks</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of dietDetails">
+        <td>{{ row.date | date }}</td>
+        <td>{{ row.weight }}</td>
+        <td>{{ row.breakfast }}</td>
+        <td>{{ row.lunch }}</td>
+        <td>{{ row.dinner }}</td>
+        <td>{{ row.snacks }}</td>
+      </tr>
+    </tbody>
+  </table>

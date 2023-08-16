@@ -1,28 +1,31 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
-import { Data1Component } from './data1/data1.component';
-import { Data2Component } from './data2/data2.component';
-import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
+import { HomeComponent } from './components/home/home.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import { ProfileComponent } from './profile/profile.component';
-import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { TokenInterceptor } from './interceptors/token.interceptor';
+import { HeaderComponent } from './components/header/header.component';
+import { AddDietComponent } from './components/add-diet/add-diet.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    Data1Component,
-    Data2Component,
     HomeComponent,
-    ProfileComponent
+    DashboardComponent,
+    HeaderComponent,
+    AddDietComponent
   ],
   imports: [
     BrowserModule,
@@ -30,9 +33,15 @@ import { HttpClientModule } from '@angular/common/http';
     CommonModule,
     NgbModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: TokenInterceptor,
+    multi: true 
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

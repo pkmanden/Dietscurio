@@ -1,0 +1,56 @@
+<div class="outer">
+    <div class="container">
+      <div class="row">
+        <div class="offset-md-2 col-lg-5 col-md-7 offset-lg-4 offset-md-3">
+          <div class="panel border bg-white">
+            <div class="panel-heading">
+              <h3 class="pt-3 font-weight-bold">Add Diet</h3>
+            </div>
+            <div class="panel-body p-3"> 
+                <form [formGroup]="dietForm">
+                    <!-- <div class="mb-3">
+                        <label for="date" class="form-label">Date</label>
+                        <input type="date" class="form-control" id="date">
+                    </div> -->
+                    <div class="form-group pt-3">
+                        <div class="input-field" [class.error]="dietForm.controls['date'].dirty && dietForm.hasError('required', 'date')">
+                            <span class="fa fa-calendar-o p-2"></span>
+                            <input type="date" formControlName="date" placeholder="Date">
+                        </div>
+                    </div>
+                    <div class="form-group pt-3">
+                        <div class="input-field" [class.error]="dietForm.controls['weight'].dirty && dietForm.hasError('required', 'weight')">
+                            <span class="fa fa-user p-2"></span>
+                            <input type="text" formControlName="weight" placeholder="Weight"><span>kg</span>
+                        </div>
+                    </div>
+                    <div class="form-group pt-3">
+                        <div class="input-field" [class.error]="dietForm.controls['breakfast'].dirty && dietForm.hasError('required', 'breakfast')">
+                            <span class="fa fa-coffee p-2"></span>
+                            <input type="text" formControlName="breakfast" placeholder="Breakfast">
+                        </div>
+                    </div>
+                    <div class="form-group pt-3">
+                        <div class="input-field" [class.error]="dietForm.controls['lunch'].dirty && dietForm.hasError('required', 'lunch')">
+                            <span class="fa fa-cutlery p-2"></span>
+                            <input type="text" formControlName="lunch" placeholder="Lunch">
+                        </div>
+                    </div>
+                    <div class="form-group pt-3">
+                        <div class="input-field" [class.error]="dietForm.controls['dinner'].dirty && dietForm.hasError('required', 'dinner')">
+                            <span class="fa fa-cutlery p-2"></span>
+                            <input type="text" formControlName="dinner" placeholder="Dinner">
+                        </div>
+                    </div>
+                    <div class="form-group pt-3">
+                        <div class="input-field" [class.error]="dietForm.controls['snacks'].dirty && dietForm.hasError('required', 'snacks')">
+                            <span class="fa fa-coffee p-2"></span>
+                            <input type="text" formControlName="snacks" placeholder="Snacks">
+                        </div>
+                    </div>
+                    <button (click)="addDiet()" type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -3,9 +3,9 @@
 @import url('https://fonts.googleapis.com/css?family=Fjalla+One');
 @import url('https://fonts.googleapis.com/css?family=Oxygen+Mono');
 
-@import url(assets/css/common.css);
+@import url('assets/css/common.css');
 
-input[type=text] {
+/* input[type=text] {
     margin: 8px 0;
     box-sizing: border-box;
     border-width: 1px;
@@ -32,11 +32,6 @@ select {
     font-family: 'Oxygen Mono', serif;
     letter-spacing: 1px;
 }
+*/
 
-h1 {
-    font-family: 'Fjalla One', serif;
-    font-size: 40px;
-    text-align: center;
-    margin-top: 2%;
-}
 

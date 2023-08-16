@@ -46,3 +46,8 @@ select {
     box-shadow: none;
     width: 100%;
 }
+
+.input-field.error {
+    border: 1px solid red;
+    color: red;
+}
