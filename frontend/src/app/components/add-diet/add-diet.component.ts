@@ -52,4 +52,8 @@ export class AddDietComponent implements OnInit {
     }
   }
 
+  clearForm() {
+    this.dietForm.reset();
+  }
+
 }
